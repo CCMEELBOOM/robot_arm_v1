@@ -5,7 +5,9 @@ import serial.tools.list_ports
 import threading
 import queue
 import time
-
+import serial.tools.list_ports
+for p in serial.tools.list_ports.comports():
+    print(p.device, "-", p.description)
 BAUD = 115200
 #Communiates with Arduino at 115200 bits/second (BAUD RATE)
 JOINT_NAMES = ["Gripper", "Wrist", "Twist", "Elbow", "Shoulder", "Base"]
